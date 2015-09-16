@@ -1,0 +1,24 @@
+{
+  "name": "arrilot/sessions",
+  "license": "MIT",
+  "keywords": [
+    "sessions",
+    "standalone",
+    "laravel"
+  ],
+  "authors": [
+    {
+      "name": "Nekrasov Ilya",
+      "email": "nekrasov.ilya90@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/arrilot/sessions",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Arrilot\\Sessions\\": "src/"
+    }
+  }
+}
