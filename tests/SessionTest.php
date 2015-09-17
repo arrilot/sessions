@@ -49,7 +49,7 @@ class SessionTest extends PHPUnit_Framework_TestCase
         Session::set('user', 'John');
         Session::set('foo', 'bar');
         Session::flush();
-        $this->assertSame([], Session::all());
+        $this->assertEmpty(Session::all());
     }
 
     public function testForget()
