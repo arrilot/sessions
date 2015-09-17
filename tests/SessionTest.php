@@ -86,20 +86,20 @@ class SessionTest extends PHPUnit_Framework_TestCase
         // 1st request
         Session::flash('user', 'John');
         Session::flash('foo', 'bar');
-    
+
         // 2nd
         $this->imitateNextRequest();
         Session::flash('before', 'Before');
         Session::keep('user');
         Session::flash('after', 'After');
-    
+
         // 3rd
         $this->imitateNextRequest();
         $this->assertSame('John', Session::get('user'));
         $this->assertFalse(Session::has('foo'));
         $this->assertSame('Before', Session::get('before'));
         $this->assertSame('After', Session::get('after'));
-    
+
         // 4th
         $this->imitateNextRequest();
         $this->assertFalse(Session::has('user'));
