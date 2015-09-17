@@ -1,5 +1,6 @@
 {
   "name": "arrilot/sessions",
+  "description": "Use Laravel session Api to work with plain old PHP sessions in any project",
   "license": "MIT",
   "keywords": [
     "sessions",
@@ -14,11 +15,20 @@
   ],
   "homepage": "https://github.com/arrilot/sessions",
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "illuminate/support": "5.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
   },
   "autoload": {
     "psr-4": {
       "Arrilot\\Sessions\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Arrilot\\Tests\\Sessions\\": "tests/"
     }
   }
 }
