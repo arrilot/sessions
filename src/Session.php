@@ -43,6 +43,7 @@ class Session
      *
      * @param $key
      * @param $value
+     *
      * @return void
      */
     public static function flash($key, $value)
@@ -67,7 +68,8 @@ class Session
     /**
      * Remove an item from the session.
      *
-     * @param  string  $key
+     * @param string $key
+     *
      * @return void
      */
     public static function forget($key)
@@ -80,6 +82,7 @@ class Session
      *
      * @param $name
      * @param $default
+     *
      * @return mixed
      */
     public static function get($name, $default = null)
@@ -91,6 +94,7 @@ class Session
      * Determining if an item exists in the session.
      *
      * @param $name
+     *
      * @return bool
      */
     public static function has($name)
@@ -102,6 +106,7 @@ class Session
      * Reflash a subset of the current flash data.
      *
      * @param $keys
+     *
      * @return void
      */
     public static function keep($keys = null)
@@ -117,6 +122,7 @@ class Session
      *
      * @param $key
      * @param $default
+     *
      * @return mixed
      */
     public static function pull($key, $default = null)
@@ -129,6 +135,7 @@ class Session
      *
      * @param $key
      * @param $value
+     *
      * @return void
      */
     public static function push($key, $value)
@@ -144,6 +151,7 @@ class Session
      *
      * @param $key
      * @param $value
+     *
      * @return void
      */
     public static function put($key, $value = null)
@@ -162,6 +170,7 @@ class Session
      *
      * @param $name
      * @param $value
+     *
      * @return void
      */
     public static function set($name, $value)
@@ -195,6 +204,7 @@ class Session
      * Merge new flash keys into the new flash array.
      *
      * @param array $keys
+     *
      * @return void
      */
     protected static function mergeWithCurrentFlashes(array $keys)
@@ -208,6 +218,7 @@ class Session
      * Remove the given keys from the old flash data.
      *
      * @param array $keys
+     *
      * @return void
      */
     protected static function removeFromOldFlashData(array $keys)
