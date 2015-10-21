@@ -13,11 +13,13 @@
 
 2) Register a service provider anywhere in your bootstrap code.
 
-```php Arrilot\Sessions\SessionProvider::register();```
+```php 
+Arrilot\Sessions\SessionProvider::register();
+```
 
 ## Usage
 
-```php Arrilot\Sessions\Session``` is the main class provided by the package.
+```Arrilot\Sessions\Session``` is the main class provided by the package.
 You can treat this class just like the Laravel Session facade and call literally any method listed [here](http://laravel.com/docs/5.0/session)
 
 Example:
