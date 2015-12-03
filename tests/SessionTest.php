@@ -29,6 +29,8 @@ class SessionTest extends PHPUnit_Framework_TestCase
     {
         // 1st request
         Session::flash('user', 'John');
+        $this->assertTrue(Session::has('user'));
+        $this->assertSame('John', Session::get('user'));
 
         // 2nd
         $this->imitateNextRequest();
@@ -40,6 +42,22 @@ class SessionTest extends PHPUnit_Framework_TestCase
         $this->assertFalse(Session::has('user'));
 
         // 4th
+        $this->imitateNextRequest();
+        $this->assertFalse(Session::has('user'));
+    }
+
+    public function testFlashNow()
+    {
+        // 1st request
+        Session::flashNow('user', 'John');
+        $this->assertTrue(Session::has('user'));
+        $this->assertSame('John', Session::get('user'));
+
+        // 2nd
+        $this->imitateNextRequest();
+        $this->assertFalse(Session::has('user'));
+
+        // 3rd
         $this->imitateNextRequest();
         $this->assertFalse(Session::has('user'));
     }
@@ -86,15 +104,20 @@ class SessionTest extends PHPUnit_Framework_TestCase
         // 1st request
         Session::flash('user', 'John');
         Session::flash('foo', 'bar');
+        Session::flashNow('foo2', 'bar2');
+        Session::keep('foo2');
 
         // 2nd
         $this->imitateNextRequest();
+        $this->assertSame('bar2', Session::get('foo2'));
         Session::flash('before', 'Before');
+        Session::keep('foo2');
         Session::keep('user');
         Session::flash('after', 'After');
 
         // 3rd
         $this->imitateNextRequest();
+        $this->assertSame('bar2', Session::get('foo2'));
         $this->assertSame('John', Session::get('user'));
         $this->assertFalse(Session::has('foo'));
         $this->assertSame('Before', Session::get('before'));
@@ -104,6 +127,7 @@ class SessionTest extends PHPUnit_Framework_TestCase
         $this->imitateNextRequest();
         $this->assertFalse(Session::has('user'));
         $this->assertFalse(Session::has('foo'));
+        $this->assertFalse(Session::has('foo2'));
     }
 
     public function testPull()

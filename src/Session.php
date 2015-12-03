@@ -56,6 +56,21 @@ class Session
     }
 
     /**
+     * Flash data for a single request.
+     *
+     * @param $key
+     * @param $value
+     *
+     * @return void
+     */
+    public static function flashNow($key, $value)
+    {
+        static::put($key, $value);
+
+        static::push('flash.old', $key);
+    }
+
+    /**
      * Remove all of the items from the session.
      *
      * @return array
@@ -198,6 +213,8 @@ class Session
         foreach (static::get('flash.old', []) as $key) {
             static::forget($key);
         }
+
+        static::put('flash.old', []);
     }
 
     /**
