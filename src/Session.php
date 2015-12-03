@@ -63,7 +63,7 @@ class Session
      *
      * @return void
      */
-    public static function flashNow($key, $value)
+    public static function now($key, $value)
     {
         static::put($key, $value);
 

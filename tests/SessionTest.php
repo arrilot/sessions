@@ -49,7 +49,7 @@ class SessionTest extends PHPUnit_Framework_TestCase
     public function testFlashNow()
     {
         // 1st request
-        Session::flashNow('user', 'John');
+        Session::now('user', 'John');
         $this->assertTrue(Session::has('user'));
         $this->assertSame('John', Session::get('user'));
 
@@ -104,7 +104,7 @@ class SessionTest extends PHPUnit_Framework_TestCase
         // 1st request
         Session::flash('user', 'John');
         Session::flash('foo', 'bar');
-        Session::flashNow('foo2', 'bar2');
+        Session::now('foo2', 'bar2');
         Session::keep('foo2');
 
         // 2nd
