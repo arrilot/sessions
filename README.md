@@ -20,7 +20,7 @@ Arrilot\Sessions\SessionProvider::register();
 ## Usage
 
 ```Arrilot\Sessions\Session``` is the main class provided by the package.
-You can treat this class just like the Laravel Session facade and call literally any method listed [here](http://laravel.com/docs/5.0/session)
+You can treat this class just like the Laravel Session facade and call literally any method listed [here](http://laravel.com/docs/5.0/session) + `flashNow()` from 5.1.
 
 Example:
 ```php
