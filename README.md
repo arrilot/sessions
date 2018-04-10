@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/arrilot/sessions/master.svg?style=flat)](https://travis-ci.org/arrilot/sessions)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/arrilot/sessions/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/arrilot/sessions/)
 
-#Laravel-like framework agnostic session package
+# Laravel-like framework agnostic session package
 
 *Use Laravel session Api to work with plain-old php sessions in any project*
 
